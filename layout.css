@@ -1,0 +1,21 @@
+@media (min-width: 1200px) {
+  .main__content,
+  .about__content,
+  .social__content,
+  .footer__content,
+  .features__content{
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 1200px) {
+  .main__content,
+  .about__content,
+  .social__content,
+  .footer__content,
+  .features__content {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
