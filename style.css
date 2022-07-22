@@ -1,11 +1,13 @@
-@import url(base.css);
-@import url(button.css);
-@import url(footer.css);
-@import url(header.css);
-@import url(layout.css);
-@import url(main.css);
-@import url(popup.css);
-@import url(redact.css);
-@import url(typography.css);
-@import url(variable.css);
-
+@import url('./styles/about.css');
+@import url('./styles/base.css');
+@import url('./styles/button.css');
+@import url('./styles/features.css');
+@import url('./styles/footer.css');
+@import url('./styles/header.css');
+@import url('./styles/layout.css');
+@import url('./styles/main.css');
+@import url('./styles/popup.css');
+@import url('./styles/redact.css');
+@import url('./styles/social.css');
+@import url('./styles/typography.css');
+@import url('./styles/variable.css');
