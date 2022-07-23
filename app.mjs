@@ -1,24 +1,32 @@
+//showmenu dom manipulation
 let showMenu = false;
 const hamburger = document.querySelector('.header__bar--burger');
 const nav = document.querySelector('.header__nav');
 const menuNav = document.querySelector('.header__listContainer');
 const navItems = document.querySelectorAll('.header__listItem');
 
+//togglemenu dom manipulation
+let showResult = false;
+const appInputEl = document.querySelector('.app__input');
+const appOutputEl = document.querySelector('.app__output');
+
 function startApp() {
-  // Your entire app should not necessarily be coded inside this 
-  // single function (though there's no penalty for that), 
-  // so create and use/call additional functions from here
 
-  // pls remove the below and make some magic in here!
-  console.log('make magic in here!');
-
-  const header = document.querySelector('h2');
-  if(header) {
-    header.textContent = 'make some magic here!!';
-  }
 };
  
-
+function toggleResult(){
+    if(!showResult){
+        // code to make the app do the scrambling here
+        appInputEl.classList.add('hide');
+        appOutputEl.classList.remove('hide');
+        return showResult = true;
+    } else {
+        // code to return to default here
+        appInputEl.classList.remove('hide');
+        appOutputEl.classList.add('hide');
+        return showResult = false;
+    }
+};
 function toggleMenu () {
   if(!showMenu) {
     hamburger.classList.add('open');
@@ -37,5 +45,5 @@ function toggleMenu () {
   }
 }
   // ======= DO NOT EDIT ============== //
-  export {startApp, toggleMenu};
+  export {startApp, toggleMenu, toggleResult};
   // ======= EEND DO NOT EDIT ========= //
