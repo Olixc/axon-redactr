@@ -1,0 +1,78 @@
+.main__right--img {
+ width: 570px;
+}
+
+.main {
+ padding-top: 5rem;
+ padding-bottom: 5rem;
+}
+
+.main__content {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+ grid-template-rows: min-content;
+ gap: 2rem;
+ align-items: center;
+ justify-content: center;
+}
+
+.main__right {
+ /* background-color: red; */
+ text-align: center;
+ position: relative;
+}
+
+.card__tweet {
+ background-color: var(--white-color);
+ position: absolute;
+ top: 20%;
+ left: 20%;
+ max-width: 340px;
+ margin: 0 auto;
+ text-align: left;
+ padding: 4rem;
+ border-radius: 18px;
+ box-shadow: 0px 4px 60px rgba(0, 0, 0, 0.188);
+}
+
+.main__title {
+ color: var(--title-text-color);
+ font-size: 4rem;
+ line-height: 4rem;
+ margin-bottom: 2.4rem;
+}
+
+.main__title--redact {
+ color: var(--primary-color);
+}
+
+.main__title--app {
+ color: var(--secondary-color);
+}
+
+.main__text {
+ font-weight: medium;
+ margin-bottom: 2.4rem;
+}
+
+.card__tweet--header {
+ margin-bottom: 2.4rem;
+}
+
+.card__tweet--header i {
+ display: inline-block;
+ color: var(--secondary-color);
+ margin-left: 1rem;
+ font-size: 3rem;
+ cursor: pointer;
+}
+
+.card__tweet hr {
+ margin-bottom: 0.5rem;
+}
+
+@media (max-width: 948px) {
+ .main__right {
+  display: none;
+ }
+}
