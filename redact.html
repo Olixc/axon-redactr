@@ -7,6 +7,10 @@
     <title>Name of chosen challenge</title>
 
     <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/cf44f28357.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <header class="header">
@@ -36,25 +40,86 @@
             </li>
           </ul>
         </nav>
-        </div>
-</header>
-
-<main class="app">
-  <div class="app__input">
-      <h1>RedactApp here</h1>
-      <button class="btn app__btn">Redact Now</button>
-  </div>
-  <div class="app__output hide">
-      <h1 >Result Popup here</h1>
-      <div class="btn app__closeBtn">
-          <span class="app__closeBtn--burger"></span>
       </div>
-  </div>
-  
-</main>
+    </header>
 
-<!-- // ============= EEND DO NOT EDIT ============== // -->
-<script src="index.mjs" type="module"></script>
-<!-- // ============= EEND DO NOT EDIT ============== // -->
-</body>
+    <main class="redact-section">
+      <div class="redact__content">
+        <div class="redact__header">
+          <h1 class="redact__title">Enter your text</h1>
+          <p class="redact__text">
+            Select specific words to hide in your tweet with redactrApp
+          </p>
+        </div>
+        <div class="redact__body">
+          <div class="redact__left">
+            <div class="scan__words">
+              <i class="fa-solid fa-barcode icon"></i>
+              <p class="scan__words--text">
+                Scanned <span class="break">words</span>
+              </p>
+            </div>
+
+            <div class="execution__time">
+              <i class="fas fa-clock icon icon--blue"></i>
+              <p class="execution__time--text">
+                Execution <span class="break">time</span>
+              </p>
+            </div>
+          </div>
+          <div class="redact__field">
+            <form class="redact__form">
+              <textarea
+                rows="15"
+                class="redact__textarea"
+                placeholder="Enter your text here"
+              ></textarea>
+              <!-- Input your sybol text field -->
+              <input
+                class="redact__input"
+                type="text"
+                placeholder="Enter your symbol"
+              />
+
+              <!-- text to hide -->
+              <input
+                class="redact__input"
+                type="text"
+                placeholder="Enter your text to hide"
+              />
+              <div class="redact__btnContainer">
+                <button class="redact__btn">
+                  <span class="redact__btn--text">Submit</span>
+                  <span class="redact__btn--icon">
+                    <i class="fas fa-arrow-right"></i>
+                  </span>
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="redact__right">
+            <div class="matched__words">
+              <!-- font awesome for scanner -->
+              <i class="fa-solid fa-circle-check icon"></i>
+              <p class="matched__words--text">
+                Matched <span class="break">words</span>
+              </p>
+            </div>
+
+            <div class="scrambled__words">
+              <!-- font awesome for clock -->
+              <i class="fa-solid fa-hand-scissors icon icon--blue"></i>
+              <p class="scrambled__words--text">
+                Scrambled <span class="break">words</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- // ============= EEND DO NOT EDIT ============== // -->
+    <script src="index.mjs" type="module"></script>
+    <!-- // ============= EEND DO NOT EDIT ============== // -->
+  </body>
 </html>
