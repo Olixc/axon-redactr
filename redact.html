@@ -4,13 +4,18 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/style.css" />
-    <title>Redactr App</title>
+    <title>Name of chosen challenge</title>
+
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
-      <header class="header">
-        <div class="header__left">
+    <header class="header">
+      <!--         <div class="header__content"></div> -->
+      <div class="header__itemContainer">
+        <div class="header__bar header__item">
+          <span class="header__bar--burger"></span>
+        </div>
+        <div class="header__left header__item">
           <a href="index.html"
             ><img class="header__logoImg" src="images/logo.svg" alt="logo"
           /></a>
@@ -32,24 +37,24 @@
           </ul>
         </nav>
         </div>
-      </header>
-  
-      <main class="app">
-        <div class="app__input">
-            <h1>RedactApp here</h1>
-            <button class="btn app__btn">Redact Now</button>
-        </div>
-        <div class="app__output hide">
-            <h1 >Result Popup here</h1>
-            <div class="btn app__closeBtn">
-                <span class="app__closeBtn--burger"></span>
-            </div>
-        </div>
-        
-      </main>
+</header>
 
-    <!-- // ============= EEND DO NOT EDIT ============== // -->
-    <script src="index.mjs" type="module"></script>
-    <!-- // ============= EEND DO NOT EDIT ============== // -->
+<main class="app">
+  <div class="app__input">
+      <h1>RedactApp here</h1>
+      <button class="btn app__btn">Redact Now</button>
+  </div>
+  <div class="app__output hide">
+      <h1 >Result Popup here</h1>
+      <div class="btn app__closeBtn">
+          <span class="app__closeBtn--burger"></span>
+      </div>
+  </div>
+  
+</main>
+
+<!-- // ============= EEND DO NOT EDIT ============== // -->
+<script src="index.mjs" type="module"></script>
+<!-- // ============= EEND DO NOT EDIT ============== // -->
 </body>
 </html>
