@@ -3,7 +3,8 @@
   .about__content,
   .social__content,
   .footer__content,
-  .features__content {
+  .features__content,
+  .redact__content {
     max-width: 1200px;
     margin: 0 auto;
   }
@@ -14,7 +15,8 @@
   .about__content,
   .social__content,
   .footer__content,
-  .features__content {
+  .features__content,
+  .redact__content {
     padding-left: 3rem;
     padding-right: 3rem;
   }
