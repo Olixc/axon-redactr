@@ -5,7 +5,7 @@ const nav = document.querySelector('.header__nav');
 const menuNav = document.querySelector('.header__listContainer');
 const navItems = document.querySelectorAll('.header__listItem');
 
-//togglemenu dom manipulation
+//toggleresult dom manipulation
 let showResult = false;
 const appInputEl = document.querySelector('.app__input');
 const appOutputEl = document.querySelector('.app__output');
@@ -14,18 +14,19 @@ function startApp() {
 
 };
  
-function toggleResult(){
-    if(!showResult){
-        // code to make the app do the scrambling here
-        appInputEl.classList.add('hide');
-        appOutputEl.classList.remove('hide');
-        return showResult = true;
-    } else {
-        // code to return to default here
-        appInputEl.classList.remove('hide');
-        appOutputEl.classList.add('hide');
-        return showResult = false;
-    }
+function toggleResult(e){
+  e.preventDefault();
+  if(!showResult){
+      // code to make the app do the scrambling here
+      appInputEl.classList.add('hide');
+      appOutputEl.classList.remove('hide');
+      return showResult = true;
+  } else {
+      // code to return to default here
+      appInputEl.classList.remove('hide');
+      appOutputEl.classList.add('hide');
+      return showResult = false;
+  }
 };
 function toggleMenu () {
   if(!showMenu) {
@@ -44,6 +45,17 @@ function toggleMenu () {
     return showMenu = false;
   }
 }
+
+function selectMenu(x){
+  console.log('select changed');
+  document.querySelectorAll('.header__link').forEach(list => {
+    list.classList.remove('active');
+  });
+  if(x.target.classList.contains('header__link')){
+    console.log('active');
+    x.target.classList.add('active')
+  }
+}
   // ======= DO NOT EDIT ============== //
-  export {startApp, toggleMenu, toggleResult};
+  export {startApp, toggleMenu, toggleResult, selectMenu};
   // ======= EEND DO NOT EDIT ========= //

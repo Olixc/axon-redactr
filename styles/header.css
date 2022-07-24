@@ -146,16 +146,17 @@
     .header__listItem{
       transform: initial;
       height:100%;
-      display:flex;
-      align-items:center;
-      border-bottom: 4px solid transparent;
     }
-    .header__listItem.active{
+    .header__link.active{
       border-bottom-color:var(--secondary-color);
     }
     .header__link{
+      height:100%;
       font-size: 2rem;
       padding:unset;
+      border-bottom: 4px solid transparent;
+      display:flex;
+      align-items:center;
     }
     
     
