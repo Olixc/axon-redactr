@@ -27,17 +27,11 @@
         </div>
         <nav class="header__right header__item header__nav">
           <ul class="header__listContainer">
-            <li class="header__listItem active">
-              <a href="index.html" class="header__link">Home</a>
+            <li class="header__listItem">
+              <a href="redact.html" class="header__link active">Use redactApp</a>
             </li>
             <li class="header__listItem">
-              <a href="#features" class="header__link">Features</a>
-            </li>
-            <li class="header__listItem">
-              <a href="redact.html" class="header__link">Use redactApp</a>
-            </li>
-            <li class="header__listItem">
-              <a href="#about" class="header__link">About</a>
+              <a onclick="return false" href="#contact" class="header__link">Contact</a>
             </li>
           </ul>
         </nav>
@@ -45,7 +39,7 @@
     </header>
 
     <main class="redact-section">
-      <div class="redact__content">
+      <div class="redact__content app__input">
         <div class="redact__header">
           <h1 class="redact__title">Enter your text</h1>
           <p class="redact__text">
@@ -89,8 +83,8 @@
                 placeholder="Enter your text to hide"
               />
               <div class="redact__btnContainer">
-                <button class="redact__btn">
-                  <span class="redact__btn--text">Submit</span>
+                <button class="redact__btn btn app__btn">
+                  <span class="redact__btn--text">Redact Now</span>
                   <span class="redact__btn--icon">
                     <i class="fas fa-arrow-right"></i>
                   </span>
@@ -117,20 +111,66 @@
           </div>
         </div>
       </div>
-    </main>
-
-    <!-- <main class="app">
-      <div class="app__input">
-        <h1>RedactApp here</h1>
-        <button class="btn app__btn">Redact Now</button>
-      </div>
       <div class="app__output hide">
+        <!-- STRUCTURE THIS DIV FOR RESULT -->
         <h1>Result Popup here</h1>
         <div class="btn app__closeBtn">
           <span class="app__closeBtn--burger"></span>
         </div>
       </div>
-    </main> -->
+    </main>
+    <footer id="Contact" class="footer">
+      <div class="footer__content">
+        <div id="footer__content--container">
+          <div>
+            <a href="index.html"
+              ><img src="images/logo-footer.svg" alt="" class="footer__logo"
+            /></a>
+          </div>
+
+          <div class="footmain">
+            <div class="footmain__item">
+              <h2 class="title">Features</h2>
+              <ul>
+                <li><a href="#">Scanned Words</a></li>
+                <li><a href="#">Execution Time</a></li>
+                <li><a href="#">Scrambled Words</a></li>
+                <li><a href="">Matched Scrambled Words</a></li>
+              </ul>
+            </div>
+            <div class="footmain__item">
+              <h2>Support</h2>
+              <ul>
+                <li><a href="#">Account</a></li>
+                <li><a href="#">Help</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+              </ul>
+            </div>
+            <div class="footmain__item">
+              <h2>Legal</h2>
+              <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="#">Terms of Use</a></li>
+              </ul>
+            </div>
+            <div class="footmain__item">
+              <h2>Social Media</h2>
+              <ul>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">LinkedIn</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Github</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <hr class="hr" />
+        <summary class="copyright">Copyright 2022 &copy;redactrApp</summary>
+      </div>
+    </footer>
 
     <!-- // ============= EEND DO NOT EDIT ============== // -->
     <script src="index.mjs" type="module"></script>

@@ -1,13 +1,24 @@
 
-.hide{
+.app__input.hide{
     display:none;
+}
+.app__output.hide{
+    display:none;
+}
+.app__output{
+    position: relative;
+    /* temporary */
+    height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
 .app__closeBtn{
     display: flex;
     justify-content: center;
     position: absolute;
-    right: 2px;
-    top: 2px;
+    right: 10px;
+    top: 10px;
     border-radius:50%;
     height: 30px;
     width: 30px;
