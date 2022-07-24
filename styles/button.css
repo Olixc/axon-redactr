@@ -50,3 +50,47 @@
     text-align: center;
   }
 }
+
+.redact__btn {
+  padding: 15px 40px;
+  border: none;
+  color: var(--white-color);
+  background-color: var(--primary-color);
+  border-radius: 4px;
+  display: inline-block;
+  font-weight: 300;
+  text-decoration: none;
+  font-size: 1.8rem;
+  transition: all 0.2s;
+  position: relative;
+  cursor: pointer;
+}
+
+.redact__btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.redact__btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.redact__btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  background-color: var(--primary-color);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+.redact__btn:hover::after {
+  transform: scaleX(1.2) scaleY(1.4);
+  opacity: 0;
+}
