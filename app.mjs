@@ -18,13 +18,13 @@ function toggleResult(e){
   e.preventDefault();
   if(!showResult){
       // code to make the app do the scrambling here
-      appInputEl.classList.add('hide');
-      appOutputEl.classList.remove('hide');
+      appInputEl.classList.add('switch');
+      appOutputEl.classList.remove('switch');
       return showResult = true;
   } else {
       // code to return to default here
-      appInputEl.classList.remove('hide');
-      appOutputEl.classList.add('hide');
+      appInputEl.classList.remove('switch');
+      appOutputEl.classList.add('switch');
       return showResult = false;
   }
 };

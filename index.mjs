@@ -11,7 +11,7 @@ menuBtn.addEventListener('click', function(){
 });
 
 //toggleresult dom manipulation
-const resultBtns = document.querySelectorAll('.btn');
+const resultBtns = document.querySelectorAll('.resultbtn');
 resultBtns.forEach(resultBtn => {
   resultBtn.addEventListener('click', function(e){
     console.log('result page clicked');

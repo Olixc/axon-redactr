@@ -1,17 +1,21 @@
-
-.app__input.hide{
-    display:none;
+.app__input{
+    width: min(95%, 60em);
+    margin-inline: auto;
 }
-.app__output.hide{
-    display:none;
+.app__input.switch{
+    opacity:0.2;
+}
+.app__output.switch{
+    display: none;
 }
 .app__output{
-    position: relative;
-    /* temporary */
-    height: 100vh;
-    display:flex;
-    justify-content: center;
-    align-items: center;
+    position: absolute;
+    border-radius:8px;
+    z-index:5;
+    width:min(95%, 40em);
+    height: 300px;
+    text-align: center;
+    box-shadow:0.3px 0.3px 10px 4px rgba(0,0,0,0.2);
 }
 .app__closeBtn{
     display: flex;
@@ -29,6 +33,7 @@
     content: '';
     position: absolute;
     top:50%;
+    right:50%;
     width: 20px;
     height: 2px;
     background-color:transparent;
@@ -37,6 +42,7 @@
 .app__closeBtn--burger::before{
     content: '';
     position: absolute;
+    bottom:10%;
     width: 20px;
     height: 2px;
     transform: rotate(45deg);
@@ -46,6 +52,7 @@
 .app__closeBtn--burger::after{
     content: '';
     position: absolute;
+    bottom:10%;
     width: 20px;
     height: 2px;
     transform: rotate(-45deg);
