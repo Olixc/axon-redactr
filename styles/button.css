@@ -41,3 +41,12 @@
   transform: scaleX(1.2) scaleY(1.4);
   opacity: 0;
 }
+
+@media (max-width: 283px) {
+  .main__btn:link,
+  .main__btn:visited {
+    padding: 1rem 0rem;
+    width: 100%;
+    text-align: center;
+  }
+}
