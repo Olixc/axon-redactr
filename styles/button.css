@@ -94,3 +94,10 @@
   transform: scaleX(1.2) scaleY(1.4);
   opacity: 0;
 }
+
+@media (max-width: 670px) {
+  .redact__btn {
+    text-align: center;
+    width: 100%;
+  }
+}
