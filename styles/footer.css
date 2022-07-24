@@ -57,3 +57,8 @@
   margin-top: 5rem;
   border: 0.1px solid var(--white-color);
 }
+
+.footer__logo {
+  display: inline-block;
+  width: 150px;
+}

@@ -1,5 +1,5 @@
 .main__right--img {
-  width: 570px;
+  width: 100%;
 }
 
 .main {
@@ -74,5 +74,19 @@
 @media (max-width: 948px) {
   .main__right {
     display: none;
+  }
+}
+
+@media (max-width: 429px) {
+  .main__content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 263px) {
+  .main__title {
+    font-size: 3rem;
+    line-height: 3rem;
+    margin-top: -2.4rem;
   }
 }
