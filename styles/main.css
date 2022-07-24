@@ -1,5 +1,11 @@
 .main__right--img {
+<<<<<<< HEAD
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+=======
   width: 570px;
+>>>>>>> 206e2e92f3a08509da4c10bc464b006d08ccd33a
 }
 
 .main {
