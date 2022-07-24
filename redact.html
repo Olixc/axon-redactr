@@ -33,7 +33,7 @@
               >
             </li>
             <li class="header__listItem">
-              <a onclick="return false" href="#contact" class="header__link"
+              <a href="#redact-contact" class="header__link"
                 >Contact</a
               >
             </li>
@@ -69,7 +69,7 @@
           <div class="redact__field">
             <form class="redact__form">
               <textarea
-                rows="15"
+                rows="10"
                 class="redact__textarea"
                 placeholder="Enter your text here..."
               ></textarea>
@@ -77,17 +77,17 @@
               <input
                 class="redact__input"
                 type="text"
-                placeholder="Enter your symbol"
+                placeholder="Enter symbol"
               />
 
               <!-- text to hide -->
               <input
                 class="redact__input"
                 type="text"
-                placeholder="Enter your text to hide"
+                placeholder="Enter text to hide"
               />
               <div class="redact__btnContainer">
-                <button class="redact__btn btn app__btn">
+                <button class="redact__btn resultbtn app__btn">
                   <span class="redact__btn--text">Redact Now</span>
                   <span class="redact__btn--icon">
                     <i class="fas fa-arrow-right"></i>
@@ -115,15 +115,15 @@
           </div>
         </div>
       </div>
-      <div class="app__output hide">
+      <div class="app__output switch">
         <!-- STRUCTURE THIS DIV FOR RESULT -->
         <h1>Result Popup here</h1>
-        <div class="btn app__closeBtn">
+        <div class="resultbtn app__closeBtn">
           <span class="app__closeBtn--burger"></span>
         </div>
       </div>
     </main>
-    <footer id="Contact" class="footer">
+    <footer id="redact-contact" class="footer">
       <div class="footer__content">
         <div id="footer__content--container">
           <div>
