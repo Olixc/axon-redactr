@@ -107,15 +107,17 @@
 
   .redact__left {
     grid-row: 2 / span 3;
-    display: flex !important;
+/*     display: flex !important; */
     align-items: flex-end;
     justify-content: space-around;
+    display: none;
   }
 
   .redact__right {
-    display: flex !important;
+/*     display: flex !important; */
     align-items: flex-end;
     justify-content: space-around;
+    display: none;
   }
 }
 
@@ -304,6 +306,14 @@
 .app__result--share--icons > *:not(:last-child) {
   margin-right: 1rem;
   transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 425px) {
+  .redact__right,
+  .redact__left{
+    display: none
+  }
+  
 }
 /* WHEN YOU ARE DONE WITH THE REDACTAPP RESULT PAGE,
 
