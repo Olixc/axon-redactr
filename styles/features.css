@@ -39,11 +39,11 @@
   color: var(--title-text-color);
   font-size: 3rem;
   line-height: 4rem;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .features__subtext {
-  text-align: center;
+  /* text-align: center; */
 }
 .feature__text--box {
   margin-bottom: 5rem;
