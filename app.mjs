@@ -9,6 +9,13 @@ const navItems = document.querySelectorAll('.header__listItem');
 let showResult = false;
 const appInputEl = document.querySelector('.app__input');
 const appOutputEl = document.querySelector('.app__output');
+const inputText = document.getElementById("input-text");
+const removeText = document.getElementById("remove-text");
+const yourSymbol = document.getElementById('your-symbol')
+const resultEl = document.querySelector('.app__result--textarea');
+
+
+
 
 function startApp() {
 
@@ -17,15 +24,48 @@ function startApp() {
 function toggleResult(e){
   e.preventDefault();
   if(!showResult){
+    appInputEl.classList.add('switch');
+    appOutputEl.classList.remove('switch');
       // code to make the app do the scrambling here
-      appInputEl.classList.add('switch');
-      appOutputEl.classList.remove('switch');
-      return showResult = true;
+    const input1= inputText.value;
+    const input2= removeText.value;
+    const input3= yourSymbol.value;
+
+    console.log("input1", input1);
+    console.log("input2", input2);
+
+    const inputArray1 = input1.split(" ");
+    const inputArray2 = input2.split(" ");
+
+    let result = [];
+
+    let input2Map = new Map();
+
+    for (const word of inputArray2) {
+      input2Map.set(word, word);
+    }
+
+    for (const word of inputArray1) {
+      if (!input2Map.has(word)) {
+        result.push(word);
+      } else {
+        length = word.length;
+        let scrambled = Array(length).fill(input3).join("");
+        result.push(scrambled);
+      }
+    }
+    result = result.join(' ');
+    console.log("result", result)
+    resultEl.placeholder = result;
+
+    return showResult = true;
   } else {
-      // code to return to default here
-      appInputEl.classList.remove('switch');
-      appOutputEl.classList.add('switch');
-      return showResult = false;
+    // code to return to default here
+    const input1= inputText.value= '';
+    const input2= removeText.value= '';
+    appInputEl.classList.remove('switch');
+    appOutputEl.classList.add('switch');
+    return showResult = false;
   }
 };
 function toggleMenu () {

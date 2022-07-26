@@ -3,17 +3,18 @@
     margin-inline: auto;
 }
 .app__input.switch{
-    opacity:0.2;
+    display:none;
 }
 .app__output.switch{
-    display: none;
+    display:none;
 }
 .app__output{
-    position: absolute;
+    margin:2em 0;
+    position:relative;
     border-radius:8px;
     z-index:5;
-    width:min(95%, 40em);
-    height: 300px;
+    width:min(95%, 55em);
+    height: 400px;
     text-align: center;
     box-shadow:0.3px 0.3px 10px 4px rgba(0,0,0,0.2);
 }

@@ -70,24 +70,26 @@
             <form class="redact__form">
               <textarea
                 rows="15"
+                id="input-text"
                 class="redact__textarea"
                 placeholder="Enter your text here..."
               ></textarea>
-              <!-- Input your sybol text field -->
+               <!-- text to hide -->
               <input
-                class="redact__input"
-                type="text"
-                placeholder="Enter your symbol"
-              />
-
-              <!-- text to hide -->
-              <input
+                id="remove-text"
                 class="redact__input"
                 type="text"
                 placeholder="Enter your text to hide"
               />
+              <!-- Input your sybol text field -->
+              <input
+                id="your-symbol"
+                class="redact__input"
+                type="text"
+                placeholder="Enter your symbol"
+              />
               <div class="redact__btnContainer">
-                <button class="redact__btn btn app__btn">
+                <button class="redact__btn resultbtn app__btn">
                   <span class="redact__btn--text">Redact Now</span>
                   <span class="redact__btn--icon">
                     <i class="fas fa-arrow-right"></i>
@@ -115,17 +117,11 @@
           </div>
         </div>
       </div>
-      <div class="app__output hide">
-        <!-- STRUCTURE THIS DIV FOR RESULT -->
-        <!-- <h1>Result Popup here</h1>
-        <div class="btn app__closeBtn">
+      <div class="app__output switch">
+        <div class="resultbtn app__closeBtn">
           <span class="app__closeBtn--burger"></span>
-        </div> -->
+        </div>
         <div class="app__output--content">
-          <div class="btn app__closeBtn">
-            <span class="app__closeBtn--burger"></span>
-          </div>
-
           <div class="app__result">
             <div class="app__result--left">
               <div class="app__scan">
@@ -157,15 +153,13 @@
                 disabled="disabled"
                 rows="15"
                 class="app__result--textarea"
-                placeholder="Hi Circle Members, Hope this meets you well ? How was your @@@@@@@@@@@@@@ exam? Please Circle lead kindly click this Circle Lead Form to input your details @@ soon @@ you can."
+                placeholder=''
               ></textarea>
 
               <div class="app__result--btnContainer">
-                <button class="app__result--btn">
-                  <span class="app__result--btn--icon">
-                    <img src="images/copy.svg" alt="copy" />
-                  </span>
-                </button>
+                <span class="app__result--btn--icon">
+                  <img src="images/copy.svg" alt="copy" />
+                </span>
               </div>
             </div>
             <div class="app__result--right">
