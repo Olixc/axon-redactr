@@ -1,4 +1,4 @@
-.redact-section{
+.redact-section {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,12 +17,7 @@
 .redact__body {
   display: grid;
   grid-template-columns: 1fr 3.5fr 1fr;
-  /* grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); */
   grid-gap: 2rem;
-}
-
-.redact__body > * {
-  /* border: 2px solid var(--primary-color); */
 }
 
 .redact__body .icon {
@@ -112,14 +107,14 @@
 
   .redact__left {
     grid-row: 2 / span 3;
-/*     display: flex !important; */
+    /*     display: flex !important; */
     align-items: flex-end;
     justify-content: space-around;
     display: none;
   }
 
   .redact__right {
-/*     display: flex !important; */
+    /*     display: flex !important; */
     align-items: flex-end;
     justify-content: space-around;
     display: none;
@@ -135,20 +130,20 @@
   align-items: center;
 }
 
-.app__result--left {
+/* .app__result--left {
   text-align: right;
   justify-content: space-around;
   align-items: center;
-  display:flex;
+  display: flex;
   flex-direction: column;
-}
-.app__result--right{
+} */
+/* .app__result--right {
   justify-content: space-around;
   align-items: center;
-  display:flex;
+  display: flex;
   flex-direction: column;
-}
-.app__result--output{
+} */
+.app__result--output {
   position: relative;
   background: rgb(241, 241, 241);
   border-radius: 1.8rem;
@@ -162,15 +157,14 @@
 
 .app__result {
   padding: 2rem;
-  /* width: min-content; */
   display: grid;
   grid-template-columns: 1fr 5.5fr 1fr;
   gap: 4rem;
-  margin:2em 0;
-
+  align-items: center;
 }
 
-.app__scan {
+.app__scan,
+.app__execution {
   margin-bottom: 2.4rem;
 }
 .app__scan,
@@ -239,6 +233,10 @@
   color: var(--secondary-color);
 }
 
+.opp__output {
+  border-radius: 1.8rem;
+}
+
 .app__result--textarea {
   width: 100%;
   font-size: 1.4rem;
@@ -246,8 +244,13 @@
   resize: none;
   display: inline-block;
   overflow: auto;
-  outline:none;
-  border:none;
+  outline: none;
+  border: none;
+
+  /* inset box shadow */
+  /* engrave shadow */
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  background-color: #fff;
 }
 
 .app__result--textarea::-webkit-scrollbar {
@@ -270,10 +273,10 @@
 }
 
 .app__result--btnContainer {
-  position:absolute;
-  top:5%;
-  right:5%;
-  cursor:pointer;
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  cursor: pointer;
 }
 
 .app__result--btn {
@@ -312,14 +315,73 @@
 
 @media (max-width: 425px) {
   .redact__right,
-  .redact__left{
-    display: none
+  .redact__left {
+    display: none;
   }
-  
 }
-/* WHEN YOU ARE DONE WITH THE REDACTAPP RESULT PAGE,
 
-ADD 
-posiiton: relative (to the parent element) 
+@media (max-width: 625px) {
+  .app__output--content {
+    display: block;
+  }
 
-*/
+  .app__result {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+
+  .app__result--left {
+    grid-row: 2 / span 3;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2.4rem;
+  }
+
+  .app__result--right {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .app__scan,
+  .app__execution,
+  .app__matched {
+    text-align: left;
+  }
+
+  .app__scan--wrap,
+  .app__matched--wrap {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row-reverse;
+  }
+
+  .app__scan--wrap .app__scan--text,
+  .app__matched--wrap .app__matched--text {
+    line-height: 1.4rem;
+    margin-left: 1rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .app__result--left {
+    flex-direction: column;
+  }
+
+  .app__result--right {
+    flex-direction: column;
+  }
+
+  .app__matched,
+  .app__scan,
+  .app__execution,
+  .app__scrambled {
+    margin-bottom: 2.4rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .app__output {
+    padding: 2rem;
+  }
+}
