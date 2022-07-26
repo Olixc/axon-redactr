@@ -27,9 +27,9 @@ function toggleResult(e){
     appInputEl.classList.add('switch');
     appOutputEl.classList.remove('switch');
       // code to make the app do the scrambling here
-    const input1= inputText.value;
-    const input2= removeText.value;
-    const input3= yourSymbol.value;
+    let input1= inputText.value;
+    let input2= removeText.value;
+    let input3= yourSymbol.value;
 
     console.log("input1", input1);
     console.log("input2", input2);
@@ -50,7 +50,7 @@ function toggleResult(e){
         result.push(word);
       } else {
         length = word.length;
-        let scrambled = Array(length).fill(input3).join("");
+        let scrambled = Array(length).fill(input3.slice(0, 1)).join("");
         result.push(scrambled);
       }
     }
@@ -61,8 +61,9 @@ function toggleResult(e){
     return showResult = true;
   } else {
     // code to return to default here
-    const input1= inputText.value= '';
-    const input2= removeText.value= '';
+    inputText.value= '';
+    removeText.value= '';
+    yourSymbol.value= '';
     appInputEl.classList.remove('switch');
     appOutputEl.classList.add('switch');
     return showResult = false;
