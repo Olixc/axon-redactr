@@ -60,3 +60,7 @@
   background-color: #5b7083;
   transition: all 0.4s ease-in-out;
 }
+
+.alert__color::placeholder {
+  color: red;
+}
