@@ -54,8 +54,8 @@ function startApp() {
   function showScrambled (input1, input2, input3){
     // code to make the app do the scrambling here  
     let result = [];
-    input1.toLowerCase();
-    input2.toLowerCase();
+    input1 = input1.toLowerCase();
+    input2 = input2.toLowerCase();
 
     const inputArray1 = input1.split(" ");
     const inputArray2 = input2.split(" ");
