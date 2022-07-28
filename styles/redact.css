@@ -68,14 +68,16 @@
 
 .redact__textarea:focus {
   border: 1px solid var(--primary-color);
-  font-size: 1.8rem;
+/*   font-size: 1.8rem; */
   color: #000;
+
 }
 
 /* style placeholder */
 .redact__textarea::placeholder {
   color: var(--text-color);
   font-size: 1.4rem;
+
 }
 
 /* style input */
@@ -86,14 +88,14 @@
   border-radius: 1rem;
   padding: 2rem;
   font-size: 1.4rem;
-  line-height: 1.4rem;
+/*   line-height: 1.4rem; */
   resize: none;
   outline: none;
 }
 
 .redact__input:focus {
   outline: 1px solid var(--primary-color);
-  font-size: 1.8rem;
+/*   font-size: 1.8rem; */
   color: #000;
 }
 
@@ -263,6 +265,7 @@
   outline: 1.5px solid var(--primary-color);
   font-size: 1.8rem;
   color: #000;
+  line-height: 1.5rem;
 }
 
 /* style placeholder */
