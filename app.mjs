@@ -10,10 +10,14 @@ function startApp() {
   let showResult = false;
   const appInputEl = document.querySelector('.app__input');
   const appOutputEl = document.querySelector('.app__output');
-  const inputText = document.getElementById("input-text");
-  const removeText = document.getElementById("remove-text");
-  const yourSymbol = document.getElementById('your-symbol')
+  const inputTextEl = document.getElementById("input-text");
+  const removeTextEl = document.getElementById("remove-text");
+  const yourSymbolEl = document.getElementById('your-symbol')
   const resultEl = document.querySelector('.app__result--textarea');
+  const scannedWordsEl = document.querySelector(".app__totalWords");
+  const matchedWordsEl = document.querySelector(".app__totalMatch");
+  const executionTimeEl = document.querySelector(".app__totalTime");
+  const scrambledWordsEl = document.querySelector(".app__totalScrambled");
   
   // showmenu event
   const menuBtn = document.querySelector('.header__bar');
@@ -41,11 +45,30 @@ function startApp() {
     })
   })
 
-  function showScrambled (input1, input2, input3, result){
+  // copytext event 
+  const copyBtnEl = document.querySelector(".app__copyBtn");
+  copyBtnEl.addEventListener("click", () => {
+    copyText()
+  })
+
+  function showScrambled (input1, input2, input3){
     // code to make the app do the scrambling here  
-    
+    let result = [];
+    input1.toLowerCase();
+    input2.toLowerCase();
+
     const inputArray1 = input1.split(" ");
     const inputArray2 = input2.split(" ");
+
+    let scannedWords = inputArray1.length;
+    let matchWords = inputArray2.length;
+    let scrambledWords = inputArray2.length;
+
+    scannedWordsEl.innerHTML = `${scannedWords}`;
+    matchedWordsEl.innerHTML = `${matchWords}`;
+    scrambledWordsEl.innerHTML = `${scrambledWords}`;
+
+   console.log(scannedWords, matchWords, scrambledWords);
 
     let input2Map = new Map();
 
@@ -69,13 +92,12 @@ function startApp() {
     appInputEl.classList.add('switch');
     appOutputEl.classList.remove('switch');
 
-    return result;
   }
 
   function clearScrambled (){
-    inputText.value= null;
-    removeText.value= null;
-    yourSymbol.value= null;
+    inputTextEl.value= null;
+    removeTextEl.value= null;
+    yourSymbolEl.value= null;
     appInputEl.classList.remove('switch');
     appOutputEl.classList.add('switch');
   }
@@ -87,29 +109,30 @@ function startApp() {
     let input2= null;
     let input3= null;
 
-    input1= inputText.value.toLowerCase();
-    input2= removeText.value.toLowerCase();
-    input3= yourSymbol.value;
+    input1= inputTextEl.value;
+    input2= removeTextEl.value;
+    input3= yourSymbolEl.value;
 
     if( !input1 || !input2 || !input3 ){
-      inputText.classList.add("alert__color");
-      removeText.classList.add("alert__color");
-      yourSymbol.classList.add("alert__color");
+      inputTextEl.classList.add("alert__color");
+      removeTextEl.classList.add("alert__color");
+      yourSymbolEl.classList.add("alert__color");
       return
     };
 
-    inputText.classList.remove("alert__color");
-    removeText.classList.remove("alert__color");
-    yourSymbol.classList.remove("alert__color");
+    inputTextEl.classList.remove("alert__color");
+    removeTextEl.classList.remove("alert__color");
+    yourSymbolEl.classList.remove("alert__color");
 
     if(!showResult){
-      let result = [];
-
-      showScrambled(input1, input2, input3, result);
-      
-      if(result){
-        return showResult = true;
-      } 
+      {
+        let start = performance.now();
+        showScrambled(input1, input2, input3);
+        let end = performance.now();
+        let executionTime = (end - start).toFixed(2);
+        executionTimeEl.innerHTML = `${executionTime}s`;
+      }
+      return showResult = true;
     } else {
       // code to return to default here
       clearScrambled();
@@ -144,6 +167,16 @@ function startApp() {
       console.log('active');
       x.target.classList.add('active')
     }
+  }
+
+  function copyText() {
+ 
+    resultEl.select();
+    resultEl.setSelectionRange(0, 99999); /* For mobile devices */
+  
+    navigator.clipboard.writeText(resultEl.placeholder);
+
+    alert("Copied: " + resultEl.placeholder);
   }
 };
  

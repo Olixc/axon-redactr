@@ -63,10 +63,11 @@
   font-size: 1.4rem;
   line-height: 1.4rem;
   resize: none;
+  outline:none;
 }
 
 .redact__textarea:focus {
-  outline: 1.5px solid var(--primary-color);
+  border: 1px solid var(--primary-color);
   font-size: 1.8rem;
   color: #000;
 }
@@ -74,7 +75,7 @@
 /* style placeholder */
 .redact__textarea::placeholder {
   color: var(--text-color);
-  font-size: 1.8rem;
+  font-size: 1.4rem;
 }
 
 /* style input */
@@ -87,17 +88,18 @@
   font-size: 1.4rem;
   line-height: 1.4rem;
   resize: none;
+  outline: none;
 }
 
 .redact__input:focus {
-  outline: 1.5px solid var(--primary-color);
+  outline: 1px solid var(--primary-color);
   font-size: 1.8rem;
   color: #000;
 }
 
 .redact__input::placeholder {
   color: var(--text-color);
-  font-size: 1.8rem;
+  font-size: 1.4rem;
 }
 
 @media (max-width: 614px) {
@@ -249,7 +251,7 @@
 
   /* inset box shadow */
   /* engrave shadow */
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 4px 6px rgba(0, 0, 0, 0.1);
   background-color: #fff;
 }
 
