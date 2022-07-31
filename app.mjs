@@ -157,98 +157,102 @@ function startApp() {
   }
   // functio to analyse text result
 
-  redactBtn.addEventListener("click", function (e) {
-    e.preventDefault();
-    formObj.mainTextInput.value = textArea.value;
-    formObj.textToHideInput.value = textToHide.value;
-    formObj.symbolToInput.value = symbolToHide.value;
-    // console.log(
-    //   checkIfToHideWordExists(
-    //     formObj.mainTextInput.value,
-    //     formObj.textToHideInput.value,
-    //     formObj.symbolToInput.value
-    //   )
-    // );
-    if (formObj.mainTextInput.value === "") {
-      formObj.mainTextInput.error = true;
-    } else {
-      formObj.mainTextInput.error = false;
-    }
-    if (formObj.textToHideInput.value === "") {
-      formObj.textToHideInput.error = true;
-    } else if (
-      !checkIfToHideWordExists(
+  if (redactBtn) {
+    redactBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      formObj.mainTextInput.value = textArea.value;
+      formObj.textToHideInput.value = textToHide.value;
+      formObj.symbolToInput.value = symbolToHide.value;
+      // console.log(
+      //   checkIfToHideWordExists(
+      //     formObj.mainTextInput.value,
+      //     formObj.textToHideInput.value,
+      //     formObj.symbolToInput.value
+      //   )
+      // );
+      if (formObj.mainTextInput.value === "") {
+        formObj.mainTextInput.error = true;
+      } else {
+        formObj.mainTextInput.error = false;
+      }
+      if (formObj.textToHideInput.value === "") {
+        formObj.textToHideInput.error = true;
+      } else if (
+        !checkIfToHideWordExists(
+          formObj.mainTextInput.value,
+          formObj.textToHideInput.value,
+          formObj.symbolToInput.value
+        )
+      ) {
+        formObj.textToHideInput.error = true;
+      } else {
+        formObj.textToHideInput.error = false;
+      }
+      if (formObj.symbolToInput.value === "") {
+        formObj.symbolToInput.error = true;
+      } else {
+        formObj.symbolToInput.error = false;
+      }
+      for (let key in formObj) {
+        if (formObj[key].error) {
+          validate(formObj[key].el);
+          return;
+        } else {
+          textArea.classList.remove("alert__color");
+        }
+      }
+      let start = performance.now();
+      redactText(
         formObj.mainTextInput.value,
         formObj.textToHideInput.value,
         formObj.symbolToInput.value
-      )
-    ) {
-      formObj.textToHideInput.error = true;
-    } else {
-      formObj.textToHideInput.error = false;
-    }
-    if (formObj.symbolToInput.value === "") {
-      formObj.symbolToInput.error = true;
-    } else {
-      formObj.symbolToInput.error = false;
-    }
-    for (let key in formObj) {
-      if (formObj[key].error) {
-        validate(formObj[key].el);
-        return;
+      );
+      let end = performance.now();
+      let executionTime = (end - start).toFixed(2);
+      executionTimeEl.innerHTML = `${executionTime}s`;
+      let scrambled = [];
+      let p = formObj.mainTextInput.value.replace(
+        /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/g,
+        " "
+      );
+      console.log({ p });
+      let words = p.split(" ");
+      console.log({ words });
+      let totalWords = formObj.mainTextInput.value.split(" ").length;
+      scannedWordsEl.innerHTML = `${totalWords}`;
+      match = new Set(match);
+      matchedWordsEl.innerHTML = `${match.size}`;
+      console.log(`match.length ${match.length}`);
+      let textToHideClean = removeDuplicates(
+        formObj.textToHideInput.value.split(" ")
+      );
+      for (let i = 0; i < words.length; i++) {
+        if (textToHideClean.includes(words[i])) {
+          scrambled.push(words[i]);
+        }
+      }
+      console.log({ words, textToHideClean, scrambled, match }, textArea.value);
+      scrambledWordsEl.innerHTML = `${scrambled.length}`;
+      console.log(`scrambled.length ${scrambled}`);
+      showResult = true;
+      if (showResult) {
+        appInputEl.classList.add("switch");
+        appOutputEl.classList.remove("switch");
+        resultEl.placeholder = result;
       } else {
-        textArea.classList.remove("alert__color");
+        appInputEl.classList.remove("switch");
+        appOutputEl.classList.add("switch");
       }
-    }
-    let start = performance.now();
-    redactText(
-      formObj.mainTextInput.value,
-      formObj.textToHideInput.value,
-      formObj.symbolToInput.value
-    );
-    let end = performance.now();
-    let executionTime = (end - start).toFixed(2);
-    executionTimeEl.innerHTML = `${executionTime}s`;
-    let scrambled = [];
-    let p = formObj.mainTextInput.value.replace(
-      /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/g,
-      " "
-    );
-    console.log({ p });
-    let words = p.split(" ");
-    console.log({ words });
-    let totalWords = formObj.mainTextInput.value.split(" ").length;
-    scannedWordsEl.innerHTML = `${totalWords}`;
-    match = new Set(match);
-    matchedWordsEl.innerHTML = `${match.size}`;
-    console.log(`match.length ${match.length}`);
-    let textToHideClean = removeDuplicates(
-      formObj.textToHideInput.value.split(" ")
-    );
-    for (let i = 0; i < words.length; i++) {
-      if (textToHideClean.includes(words[i])) {
-        scrambled.push(words[i]);
-      }
-    }
-    console.log({ words, textToHideClean, scrambled, match }, textArea.value);
-    scrambledWordsEl.innerHTML = `${scrambled.length}`;
-    console.log(`scrambled.length ${scrambled}`);
-    showResult = true;
-    if (showResult) {
-      appInputEl.classList.add("switch");
-      appOutputEl.classList.remove("switch");
-      resultEl.placeholder = result;
-    } else {
-      appInputEl.classList.remove("switch");
-      appOutputEl.classList.add("switch");
-    }
-    console.log({ result });
-    match = [];
-  });
+      console.log({ result });
+      match = [];
+    });
+  }
   const copyBtnEl = document.querySelector(".app__copyBtn");
-  copyBtnEl.addEventListener("click", () => {
-    copyText();
-  });
+  if (copyBtnEl) {
+    copyBtnEl.addEventListener("click", () => {
+      copyText();
+    });
+  }
   function copyText() {
     resultEl.select();
     resultEl.setSelectionRange(0, 99999); /* For mobile devices */
@@ -258,20 +262,22 @@ function startApp() {
     alert("Copied:");
   }
   // closeResult
-  resultCloseBtn.addEventListener("click", function () {
-    showResult = false;
-    if (showResult) {
-      appInputEl.classList.add("switch");
-      appOutputEl.classList.remove("switch");
-      resultEl.value = result;
-    } else {
-      appInputEl.classList.remove("switch");
-      appOutputEl.classList.add("switch");
-    }
-    textArea.value = "";
-    textToHide.value = "";
-    symbolToHide.value = "";
-  });
+  if (resultCloseBtn) {
+    resultCloseBtn.addEventListener("click", function () {
+      showResult = false;
+      if (showResult) {
+        appInputEl.classList.add("switch");
+        appOutputEl.classList.remove("switch");
+        resultEl.value = result;
+      } else {
+        appInputEl.classList.remove("switch");
+        appOutputEl.classList.add("switch");
+      }
+      textArea.value = "";
+      textToHide.value = "";
+      symbolToHide.value = "";
+    });
+  }
 
   function toggleMenu() {
     if (!showMenu) {
