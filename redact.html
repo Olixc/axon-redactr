@@ -74,7 +74,7 @@
                 class="redact__textarea"
                 placeholder="Enter your text here..."
               ></textarea>
-               <!-- text to hide -->
+              <!-- text to hide -->
               <input
                 id="remove-text"
                 class="redact__input"
@@ -91,7 +91,7 @@
                 required
               />
               <div class="redact__btnContainer">
-                <button class="redact__btn resultbtn app__btn">
+                <button class="redact__btn resultbtn app__btn" id="resultBtn">
                   <span class="redact__btn--text">Redact Now</span>
                   <span class="redact__btn--icon">
                     <i class="fas fa-arrow-right"></i>
@@ -120,7 +120,7 @@
         </div>
       </div>
       <div class="app__output switch">
-        <div class="resultbtn app__closeBtn">
+        <div class="resultbtn app__closeBtn" id="close-result-btn">
           <span class="app__closeBtn--burger"></span>
         </div>
         <div class="app__output--content">
@@ -145,7 +145,9 @@
                   <i class="fa-solid fa-circle-check icon--blue"></i>
                 </div>
                 <p class="app__matched--number">
-                  <span class="app__matched--number--text app__totalMatch"></span>
+                  <span
+                    class="app__matched--number--text app__totalMatch"
+                  ></span>
                 </p>
               </div>
             </div>
@@ -155,7 +157,7 @@
                 disabled="disabled"
                 rows="15"
                 class="app__result--textarea"
-                placeholder=''
+                placeholder=""
               ></textarea>
 
               <div class="app__result--btnContainer app__copyBtn">
@@ -173,7 +175,9 @@
                   </p>
                 </div>
                 <p class="app__execution--number">
-                  <span class="app__execution--number--text app__totalTime"></span>
+                  <span
+                    class="app__execution--number--text app__totalTime"
+                  ></span>
                 </p>
               </div>
               <div class="app__scrambled">
@@ -184,7 +188,9 @@
                   </p>
                 </div>
                 <p class="app__scrambled--number">
-                  <span class="app__scrambled--number--text app__totalScrambled"></span>
+                  <span
+                    class="app__scrambled--number--text app__totalScrambled"
+                  ></span>
                 </p>
               </div>
             </div>

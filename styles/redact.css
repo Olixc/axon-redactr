@@ -63,7 +63,7 @@
   font-size: 1.4rem;
   line-height: 1.4rem;
   resize: none;
-  outline:none;
+  outline: none;
 }
 
 .redact__textarea:focus {
@@ -183,6 +183,10 @@
 .app__matched--wrap {
   display: flex;
   align-items: flex-end;
+}
+
+#off {
+  display: none;
 }
 
 .app__execution--wrap,
@@ -386,4 +390,46 @@
   .app__output {
     padding: 2rem;
   }
+}
+
+/* create a bounce animation */
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Create a wobble animation */
+@keyframes wobble {
+  0% {
+    transform: rotate(0deg);
+  }
+  15% {
+    transform: rotate(-5deg);
+  }
+  30% {
+    transform: rotate(5deg);
+  }
+  45% {
+    transform: rotate(-5deg);
+  }
+  60% {
+    transform: rotate(5deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.animate {
+  animation: wobble 0.5s ease-in-out;
 }
