@@ -1,22 +1,23 @@
 .about {
   padding-top: 10rem;
   padding-bottom: 10rem;
-  background-color: aliceblue;
+  background-color:rgb(245, 244, 244);
 }
 
 .about__content {
   position: relative;
 }
 .about__block {
-  border: 1px solid #bbd1f5;
+  border: 1px solid rgb(216, 215, 215);
   padding: 12rem 20rem;
   width: 90%;
   margin-bottom: 4rem;
   border-radius: 12px;
+  box-shadow: 0px 5px 5px 0px;
 }
 
 .about__title {
-  color: var(--title-text-color);
+  color: green;
   font-size: 3rem;
   line-height: 4rem;
   text-align: center;
