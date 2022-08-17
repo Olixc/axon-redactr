@@ -273,6 +273,41 @@ function startApp() {
     symbolToHide.value = "";
   });
 
+  //Twitter Share
+  const tweetHandler = document.querySelector('.fa-twitter');
+  tweetHandler.addEventListener('click', () => {
+     twitter(result);
+  })
+
+  function twitter(tweet) {
+    const tweetInput = `https://twitter.com/intent/tweet?text=${tweet}`
+    window.open(`${tweetInput}`);
+  }
+
+  const whatsaapHandler = document.querySelector('.fa-whatsapp');
+  whatsaapHandler.addEventListener('click', () => {
+    whatsaap(result);
+  })
+
+  function whatsaap(string) {
+    const whatsaapInput = `https://wa.me/?text=${string}`
+    window.open(`${whatsaapInput}`);
+  }
+
+  const telegramHandler = document.querySelector('.fa-telegram');
+  telegramHandler.addEventListener('click', () => {
+    telegram(result);
+  })
+
+  function telegram(string) {
+    const telegramInput = `https://t.me/share/url?url=${location.url}&text=${string}`
+    window.open(`${telegramInput}`);
+  }
+  
+  // https://t.me/share/url?url={url}&text={text}
+
+
+
   function toggleMenu() {
     if (!showMenu) {
       hamburger.classList.add("open");
